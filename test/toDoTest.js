@@ -1,8 +1,8 @@
 var expect = require('chai').expect
 var assert = require('chai').assert
 
-var ToDo = require('../src/toDo.js');
-var ToDoList = require('../src/toDoList.js');
+var ToDo = require('../public/src/toDo.js').ToDo;
+var ToDoList = require('../public/src/toDoList.js').ToDoList;
 
 describe("instantiate a todo", function() {
   it('creates an instance of ToDo', function(){
@@ -24,6 +24,6 @@ describe("return a HTML string with a task in it", function() {
     var todolist = new ToDoList();
     var testTask = new ToDo("Wash the bike");
     todolist.add(testTask);
-    expect(todolist.popTask()).to.equal("<ul><li>Wash the bike</li></ul>");
+    expect(todolist.popTask()).to.equal("<ul><li id='list_0'>Wash the bike</li></ul>");
   });
 });
