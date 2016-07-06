@@ -2,6 +2,7 @@ var chai = require('chai');
 var expect = require('chai').expect;
 var chaiHtml = require('chai-html');
 var sinon = require('sinon');
+
 var List = require('../lib/models/list.js');
 var Task = require('../lib/models/task.js');
 
