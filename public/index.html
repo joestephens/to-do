@@ -12,8 +12,12 @@
 
   <body>
     <h1>To Do List App</h1>
-    <input id="text">
-    <button type="button" id="add">Click Me</button>
+
+    <form method="post" action="/add-todo">
+      <input id="task" name="task">
+      <input type="submit" id="add" value="Click Me">
+    </form>
+
     <div id="list"></div>
   </body>
 </html>

@@ -8,4 +8,13 @@ window.addEventListener("load", function() {
   toDoList.add(testTask2);
   toDoList.add(testTask3);
   document.getElementById('list').innerHTML = toDoList.popTask();
+
+  document.getElementById('add').addEventListener('click', function(evt) {
+    evt.preventDefault();
+    var taskString = document.getElementById('task').value;
+    var toDo = new ToDo(taskString);
+    toDoList.add(toDo);
+    document.getElementById('list').innerHTML = toDoList.popTask();
+    document.getElementById('task').value = '';
+  });
 });
