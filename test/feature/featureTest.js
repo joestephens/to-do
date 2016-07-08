@@ -27,7 +27,9 @@ describe('home page', function() {
 		assert.equal(browser.text('title'), 'To Do List');
 	});
 
-	it('contains some to dos', function() {
+	it('contains some to dos', function(done) {
+		browser.wait(3000);
+
 		browser.fill('task', 'phone grandma');
 	  browser.pressButton('Add to list');
 		assert.include(browser.text('ul'), 'phone grandma');
@@ -36,16 +38,29 @@ describe('home page', function() {
 	  browser.pressButton('Add to list');
 		assert.include(browser.text('ul'), 'phone grandma');
 		assert.include(browser.text('ul'), 'eat chocolate');
-		assert.include(browser.text('ul'), 'Shoot the ice cream van guy for Leo');
-		assert.include(browser.text('ul'), 'Fix the Walkthroughs');
-		assert.include(browser.text('ul'), 'Drink some beer!');
-		assert.include(browser.text('ul'), 'Feed Sergio\'s neighbours cat!');
+
+		// var lastRequest = browser.lastRequest;
+		// assert.equal(lastRequest.url, 'http://quiet-beach-24792.herokuapp.com/todos.json');
+
+
+
+		done();
 	});
+	it("does soemthing", function() {
+		browser.visit('/').then(function(done) {
+			assert.include(browser.text('ul'), 'Shoot the ice cream van guy for Leo');
+			assert.include(browser.text('ul'), 'Fix the Walkthroughs');
+			assert.include(browser.text('ul'), 'Drink some beer!');
+			assert.include(browser.text('ul'), 'Feed Sergio\'s neighbours cat!');
+			done();
+		});
+	})
+
 
 	it('toDo starts with status not complete', function(){
 		browser.fill('task', 'phone grandma');
 	  browser.pressButton('Add to list');
-		assert.include(browser.text('ul'), 'not completed');
+		assert.include(browser.text('ul'), 'phone grandma - not completed');
 	});
 
 	it('once two checkboxes are ticked, both toDos have status complete', function(){
@@ -55,7 +70,7 @@ describe('home page', function() {
     browser.fill('task', 'wash hair');
     browser.pressButton('Add to list');
     browser.pressButton("checkbox2");
-    assert.notInclude(browser.text('ul'), 'not');
+    assert.include(browser.text('ul'), 'phone grandma - completed');
    });
 
 });
