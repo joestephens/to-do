@@ -27,9 +27,7 @@ describe('home page', function() {
 		assert.equal(browser.text('title'), 'To Do List');
 	});
 
-	it('contains some to dos', function(done) {
-		browser.wait(3000);
-
+	it('contains some to dos', function() {
 		browser.fill('task', 'phone grandma');
 	  browser.pressButton('Add to list');
 		assert.include(browser.text('ul'), 'phone grandma');
@@ -38,24 +36,15 @@ describe('home page', function() {
 	  browser.pressButton('Add to list');
 		assert.include(browser.text('ul'), 'phone grandma');
 		assert.include(browser.text('ul'), 'eat chocolate');
-
-		// var lastRequest = browser.lastRequest;
-		// assert.equal(lastRequest.url, 'http://quiet-beach-24792.herokuapp.com/todos.json');
-
-
-
-		done();
 	});
-	it("does soemthing", function() {
-		browser.visit('/').then(function(done) {
+
+	it("contains some to dos from json", function(xhr) {
 			assert.include(browser.text('ul'), 'Shoot the ice cream van guy for Leo');
 			assert.include(browser.text('ul'), 'Fix the Walkthroughs');
 			assert.include(browser.text('ul'), 'Drink some beer!');
 			assert.include(browser.text('ul'), 'Feed Sergio\'s neighbours cat!');
-			done();
-		});
-	})
-
+		xhr('GET', 'http://quiet-beach-24792.herokuapp.com/todos.json');
+	});
 
 	it('toDo starts with status not complete', function(){
 		browser.fill('task', 'phone grandma');

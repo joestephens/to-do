@@ -34,3 +34,8 @@
 	console.log('LINE 34')
 	ajax();
 	console.log('LINE 36')
+
+	var ಠ_ಠ = function() {
+		console.log("HI!");
+	}
+ಠ_ಠ();
