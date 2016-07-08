@@ -7,13 +7,13 @@ window.onload = function() {
 
   reload();
 
-  document.getElementById("newtodo").addEventListener('submit', function(event) {
+  ಠ_ಠ("newtodo").addEventListener('submit', function(event) {
     event.preventDefault();
     todolist.createToDo(document.getElementById("task").value);
     reload();
   });
 
-  document.getElementById('list').addEventListener('click', completeTodo, false);
+  ಠ_ಠ("list").addEventListener('click', completeTodo, false);
 
   function completeTodo(e) {
     e.preventDefault();
@@ -26,7 +26,7 @@ window.onload = function() {
   };
 
   function reload() {
-    document.getElementById("todos").innerHTML = todolist.convertListToHTML();
+    ಠ_ಠ("todos").set(todolist.convertListToHTML());
     document.getElementById('list').addEventListener('click', completeTodo, false);
   };
 
