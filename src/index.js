@@ -18,24 +18,15 @@
 		updateList();
 	};
 
-	var ajax = function() {
-		console.log('LINE 22')
-		$.getJSON('http://quiet-beach-24792.herokuapp.com/todos.json', function(data) {
-			console.log('LINE 24')
-			$.each(data, function(k, v) {
-				console.log('LINE 26')
-				list.addItem(v.text);
-				updateList();
-			})
-			console.log('LINE 30')
-		});
-		console.log('LINE 32')
-	};
-	console.log('LINE 34')
-	ajax();
-	console.log('LINE 36')
+var ajax = function(callback) {
+	$.getJSON('http://quiet-beach-24792.herokuapp.com/todos.json', function(data) {
+		callback(data);
+	});
+};
 
-	var ಠ_ಠ = function() {
-		console.log("HI!");
-	}
-ಠ_ಠ();
+ajax(function(data) {
+  $.each(data, function(k, v) {
+    list.addItem(v.text);
+    updateList();
+  });
+});

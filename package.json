@@ -1,28 +1,100 @@
 {
-  "name": "to-do",
-  "version": "1.0.0",
-  "description": "Front-end To-do list",
-  "main": "index.js",
-  "scripts": {
-    "test": "(mocha)"
+  "_args": [
+    [
+      {
+        "raw": "unicorn-list",
+        "scope": null,
+        "escapedName": "unicorn-list",
+        "name": "unicorn-list",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/Users/joestephens/Projects/to-do"
+    ]
+  ],
+  "_from": "unicorn-list@latest",
+  "_id": "unicorn-list@1.0.3",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/unicorn-list",
+  "_nodeVersion": "6.2.2",
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/unicorn-list-1.0.3.tgz_1467993845301_0.9336759427096695"
   },
+  "_npmUser": {
+    "name": "vannio",
+    "email": "singularity@vannio.co.uk"
+  },
+  "_npmVersion": "3.9.5",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "unicorn-list",
+    "scope": null,
+    "escapedName": "unicorn-list",
+    "name": "unicorn-list",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/unicorn-list/-/unicorn-list-1.0.3.tgz",
+  "_shasum": "cd4226983ed58064acc313644e8c2ddc856358d9",
+  "_shrinkwrap": null,
+  "_spec": "unicorn-list",
+  "_where": "/Users/joestephens/Projects/to-do",
+  "author": {
+    "name": "Team Unicorn"
+  },
+  "bugs": {
+    "url": "https://github.com/vannio/unicorn-framework/issues"
+  },
+  "dependencies": {},
+  "description": "Simple web framework",
+  "devDependencies": {},
+  "directories": {
+    "doc": "docs"
+  },
+  "dist": {
+    "shasum": "cd4226983ed58064acc313644e8c2ddc856358d9",
+    "tarball": "https://registry.npmjs.org/unicorn-list/-/unicorn-list-1.0.3.tgz"
+  },
+  "gitHead": "c4beea47afecb19d7f0e65d09e05309b2c85d19b",
+  "homepage": "https://github.com/vannio/unicorn-framework#readme",
+  "keywords": [
+    "node",
+    "http",
+    "template"
+  ],
+  "license": "ISC",
+  "main": "app/server.js",
+  "maintainers": [
+    {
+      "name": "andreamazza89",
+      "email": "andrea.mazzarella89@gmail.com"
+    },
+    {
+      "name": "mtaner",
+      "email": "mervetaner88@gmail.com"
+    },
+    {
+      "name": "vannio",
+      "email": "singularity@vannio.co.uk"
+    }
+  ],
+  "name": "unicorn-list",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cameronepstein/to-do.git"
+    "url": "git+https://github.com/vannio/unicorn-framework.git"
   },
-  "author": "Cameron Epstein",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/cameronepstein/to-do/issues"
+  "scripts": {
+    "postinstall": "bash makefile.sh",
+    "start": "node app/server.js"
   },
-  "homepage": "https://github.com/cameronepstein/to-do#readme",
-  "dependencies": {
-    "chai": "^3.5.0",
-    "mocha": "^2.5.3",
-    "sinon": "^1.17.4"
-  },
-  "devDependencies": {
-    "http-server": "^0.9.0",
-    "zombie": "^4.2.1"
-  }
+  "version": "1.0.3"
 }
