@@ -2,7 +2,6 @@ var assert = require('chai').assert;
 var expect = require('chai').expect;
 var Item = require('../../src/js/item.js').Item;
 
-
 describe('Item', function() {
 
 	var item;
@@ -29,7 +28,7 @@ describe('Item', function() {
     before(function() {
       item.changeStatus();
     });
-    
+
     it('Changes status of item to complete', function() {
       expect(item.status()).to.be.true;
     });
@@ -38,7 +37,5 @@ describe('Item', function() {
       expect(item.printStatus()).to.equal('completed')
     });
   });
-
- 
 
 });

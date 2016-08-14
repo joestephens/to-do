@@ -14,8 +14,6 @@
 	  return '<ul>' + print + '</ul>';
 	};
 
-
-
 	exports.printItems = printItems;
 
 })(this);

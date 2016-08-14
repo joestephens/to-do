@@ -4,11 +4,9 @@ var sinon = require('sinon');
 var List = require('../../src/js/list.js').List;
 
 describe('List', function() {
-
   var Stub = sinon.stub();
   Stub.withArgs('phone grandma').returns({ _item: 'phone grandma', _complete: false });
   Stub.withArgs('eat chocolate').returns({ _item: 'eat chocolate', _complete: false });
-
 
   it('should print a list of items', function() {
     var todo = new List();

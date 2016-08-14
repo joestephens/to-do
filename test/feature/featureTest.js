@@ -2,26 +2,20 @@ process.env.NODE_ENV = 'test';
 
 var server = require("http-server").createServer();
 var Browser = require('zombie');
-// var assert = require('assert');
 var assert = require('chai').assert;
 var expect = require('chai').expect;
 
-
 describe('home page', function() {
 
-	beforeEach(function() {
+	beforeEach(function(done) {
 		server.listen(3000);
 		browser = new Browser({ site: "http://localhost:3000"});
+		browser.visit('/', done);
 	});
 
 	afterEach(function() {
-    // after each of the tests, close the server
     server.close(3000);
 	})
-	//
-	// beforeEach(function(done) {
-	// 	browser.visit('/', done);
-	// });
 
 	it('title attribute is To Do List', function() {
 		assert.equal(browser.text('title'), 'To Do List');
@@ -38,14 +32,11 @@ describe('home page', function() {
 		assert.include(browser.text('ul'), 'eat chocolate');
 	});
 
-	it("contains some to dos from json", function(done) {
-		browser.visit('/').then(function() {
-			assert.include(browser.text('ul'), 'Shoot the ice cream van guy for Leo');
-			assert.include(browser.text('ul'), 'Fix the Walkthroughs');
-			assert.include(browser.text('ul'), 'Drink some beer!');
-			assert.include(browser.text('ul'), 'Feed Sergio\'s neighbours cat!');
-			done();..
-		});
+	it("contains some to dos from json", function() {
+		assert.include(browser.text('ul'), 'Shoot the ice cream van guy for Leo');
+		assert.include(browser.text('ul'), 'Fix the Walkthroughs');
+		assert.include(browser.text('ul'), 'Drink some beer!');
+		assert.include(browser.text('ul'), 'Feed Sergio\'s neighbours cat!');
 	});
 
 	it('toDo starts with status not complete', function(){
